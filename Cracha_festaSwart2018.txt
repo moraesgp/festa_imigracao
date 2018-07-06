@@ -22,7 +22,7 @@
 1.5.1;Bruna;Wim
 1.5.2;Christia;Wim
 
-1.6;Rob;Swart
+1.6;Rob;Wim
 1.6;Vera;Wim
 1.6.1;Guilherme;Wim
 1.6.2;Paula;Wim
@@ -51,10 +51,10 @@
 2.3.1;Maira;IJs
 2.3.2;Thais;IJs
 
-2.3;Jaqueline;IJs
-2.3;Otto;IJs
-2.3.1;Yuri;IJs
-2.3.2;Matheus;IJs
+2.4;Jaqueline;IJs
+2.4;Otto;IJs
+2.4.1;Yuri;IJs
+2.4.2;Matheus;IJs
 
 2.5;Maurício;IJs
 2.5;Nídia;IJs
@@ -68,7 +68,7 @@
 3.3.1;Deric;Tiny
 
 3.7;Geraldo;Tiny
-3.7a;Roseli;Tiny
+3.7;Roseli;Tiny
 3.7.1;Larissa;Tiny
 3.7.2;Ludmila;Tiny
 
@@ -108,7 +108,7 @@
 4.5.3;Sophia;Piet
 
 4.6;Saskia;Piet
-4.6;J. Eduardo;Piet
+4.6;Eduardo;Piet
 4.6.1;Thiago;Piet
 4.6.2;Marina;Piet
 
@@ -125,11 +125,11 @@
 5.2.1;Carolina;Ria
 5.2.2;Gisele;Ria
 
-5.3;Ilonka;Ria
-5.3;Paulo;Ria
-5.3.1;Maira;Ria
-5.3.2;Thais;Ria
-5.3.2;Gustavo;Ria
+2.3/5.3;Ilonka;IJs/Ria
+2.3/5.3;Paulo;IJs/Ria
+2.3.1/5.3.1;Maira;IJs/Ria
+2.3.2/5.3.2;Thais;IJs/Ria
+2.3.3/5.3.2;Gustavo;IJs/Ria
 
 6;Truus
 6;Paul;Truus

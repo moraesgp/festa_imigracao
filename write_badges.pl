@@ -22,14 +22,16 @@ open(my $script_fh, '>:encoding(UTF-8)', $script_file) or die "Could not open fi
 print $script_fh 'PATH="C:\Program Files\Inkscape"';
 print $script_fh "\n";
 
+my $counter = 0;
 while (my $row = <$fh>) {
 	chomp $row;
 	my ($codigo, $nome_completo, $parent) = split /;/, $row;
-	print $parent;
 	$nome_completo =~ s/^\s*//s;
 	my $nome = (split(/\s+/,$nome_completo,2))[0];
+	$codigo =~ s/^\s*//s;
+	$parent =~ s/^\s*//s;
 	next unless $nome;
-	printf "NOME: %s\t\tCODIGO: %s\t\tPARENT: %s\n", $nome, $codigo, $parent;
+	printf "NOME: -%s-\t\tCODIGO: -%s-\t\tPARENT: -%s-\n", $nome, $codigo, $parent;
 	# my $file_content = "GABRIEL PERSON_NAME_CCC PRADO SERIAL_NUMBER_AAA DE PARENT_NAME_BBB\n";
 	my $file_content = $data;
 
@@ -37,12 +39,23 @@ while (my $row = <$fh>) {
 	$file_content =~ s/SERIAL_NUMBER_AAA/$codigo/;
 	$file_content =~ s/PARENT_NAME_BBB/$parent/;
 
-	my $outfile = "$dir/$codigo.svg";
+	# my $outfile = sprintf "%s\\%05d-%s.svg", $dir, ++$counter, $codigo;
+	my $outfile = sprintf "%s\\%05d.svg", $dir, ++$counter;
 
 	open(my $output_fh, '>encoding(UTF-8)', $outfile) or die "Could not open file '$outfile' $!";
 	print $output_fh $file_content;
 	close $output_fh;
-	print $script_fh "inkscape.exe --export-area-page --export-dpi=655 --export-png=\"" . $outfile . ".png \" \"" . $outfile . "\"";
+	
+	my @extensions = split /\./, $outfile;
+	my $ext = $extensions[-1];
+	my $png_file = $outfile;
+	if($ext) {
+		$png_file =~ s/$ext/png/g;
+	}
+
+	print $script_fh "inkscape.exe --export-area-page --export-dpi=655 --export-png=\"" . $png_file . "\" \"" . $outfile . "\"";
+	print $script_fh "\n";
+	print $script_fh "del $outfile";
 	print $script_fh "\n";
 }
 
@@ -51,4 +64,5 @@ close $script_fh;
 print $dir;
 print "\n";
 
+exec "start $dir";
 
