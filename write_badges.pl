@@ -25,22 +25,27 @@ print $script_fh "\n";
 my $counter = 0;
 while (my $row = <$fh>) {
 	chomp $row;
-	my ($codigo, $nome_completo, $parent) = split /;/, $row;
+	my ($nome_completo, $codigo1, $parente1, $codigo2, $parente2) = split /;/, $row;
 	$nome_completo =~ s/^\s*//s;
 	my $nome = (split(/\s+/,$nome_completo,2))[0];
-	$codigo =~ s/^\s*//s;
-	$parent =~ s/^\s*//s;
+	$codigo1 =~ s/^\s*//s;
+	$parente1 =~ s/^\s*//s;
+	$codigo2 =~ s/^\s*//s;
+	$parente2 =~ s/^\s*//s;
 	next unless $nome;
-	printf "NOME: -%s-\t\tCODIGO: -%s-\t\tPARENT: -%s-\n", $nome, $codigo, $parent;
 	# my $file_content = "GABRIEL PERSON_NAME_CCC PRADO SERIAL_NUMBER_AAA DE PARENT_NAME_BBB\n";
 	my $file_content = $data;
 
-	$file_content =~ s/PERSON_NAME_CCC/$nome/;
-	$file_content =~ s/SERIAL_NUMBER_AAA/$codigo/;
-	$file_content =~ s/PARENT_NAME_BBB/$parent/;
+	$file_content =~ s/NAME_CCC/$nome/;
+	$file_content =~ s/S_AAA/$codigo1/;
+	$file_content =~ s/P_AAA/$parente1/;
+	$codigo2 = "/ $codigo2" if($codigo2);
+	$file_content =~ s/S_BBB/$codigo2/;
+	$file_content =~ s/P_BBB/$parente2/;
 
 	# my $outfile = sprintf "%s\\%05d-%s.svg", $dir, ++$counter, $codigo;
 	my $outfile = sprintf "%s\\%05d.svg", $dir, ++$counter;
+	printf "%05d) NOME: -%s-\t\tCODIGO: -%s-\t\tPARENT: -%s-\t\tCODIGO: -%s-\t\tPARENT: -%s-\n", $counter, $nome, $codigo1, $parente1, $codigo2, $parente2;
 
 	open(my $output_fh, '>encoding(UTF-8)', $outfile) or die "Could not open file '$outfile' $!";
 	print $output_fh $file_content;
