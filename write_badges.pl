@@ -86,7 +86,7 @@ print "\n";
 my $magica_file = "$dir\\magica.bat";
 open(my $magica_fh, '>:encoding(UTF-8)', $magica_file) or die "Could not open file '$magica_file' $!";
 
-my $hor = 16;
+my $hor = 12;
 my $first = 1;
 my $last = $counter;
 
@@ -101,7 +101,7 @@ while($counter < $last) {
 	my $hor_size = 0;
 	for(my $i = 0; $i < $hor && $counter < $last; $i++) {
 		printf $magica_fh "%05d.png ", ++$counter;
-		$hor_size += 112;
+		$hor_size += 160;
 	}
 	my $hor_filename = sprintf "HORIZONTAL_%d.png", $counter;
 	printf $magica_fh "+append %s\n\n", $hor_filename;
