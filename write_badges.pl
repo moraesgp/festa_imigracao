@@ -3,13 +3,21 @@ use v5.18;
 use File::Temp qw/ tempfile tempdir /;
 
 binmode(STDOUT, ":utf8");
-my $cracha_file = 'cracha.svg';
 my $data;
+my $data_primos;
 
+my $cracha_file = 'cracha.svg';
 { open(my $cracha_fh, '<', $cracha_file) or die "Could not open file '$cracha_file' $!";
 	local $/ = undef;
 	$data = <$cracha_fh>;
 	close $cracha_fh;
+}
+
+my $cracha_primos_file = 'cracha_primos.svg';
+{ open(my $cracha_primos_fh, '<', $cracha_primos_file) or die "Could not open file '$cracha_primos_file' $!";
+	local $/ = undef;
+	$data_primos = <$cracha_primos_fh>;
+	close $cracha_primos_fh;
 }
 
 my $filename = 'Cracha_festaSwart2018.txt';
@@ -34,12 +42,16 @@ while (my $row = <$fh>) {
 	$parente2 =~ s/^\s*//s;
 	next unless $nome;
 	# my $file_content = "GABRIEL PERSON_NAME_CCC PRADO SERIAL_NUMBER_AAA DE PARENT_NAME_BBB\n";
-	my $file_content = $data;
+	my $file_content;
+	if($codigo2) {
+		$file_content = $data_primos;
+	} else {
+		$file_content = $data;
+	}
 
 	$file_content =~ s/NAME_CCC/$nome/;
 	$file_content =~ s/S_AAA/$codigo1/;
 	$file_content =~ s/P_AAA/$parente1/;
-	$codigo2 = "/ $codigo2" if($codigo2);
 	$file_content =~ s/S_BBB/$codigo2/;
 	$file_content =~ s/P_BBB/$parente2/;
 
@@ -64,6 +76,7 @@ while (my $row = <$fh>) {
 	print $script_fh "\n";
 }
 
+print $script_fh "start magica.bat\n\n";
 close $fh;
 close $script_fh;
 print $dir;
@@ -75,9 +88,9 @@ open(my $magica_fh, '>:encoding(UTF-8)', $magica_file) or die "Could not open fi
 
 my $hor = 16;
 my $first = 1;
-my $last = 157;
+my $last = $counter;
 
-my $counter = 0;
+$counter = 0;
 
 my @hor_files;
 print $magica_fh 'PATH="C:\Program Files\ImageMagick-7.0.8-Q16"';
