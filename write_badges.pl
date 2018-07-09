@@ -69,5 +69,46 @@ close $script_fh;
 print $dir;
 print "\n";
 
+# ============ MAGICA ============ #
+my $magica_file = "$dir\\magica.bat";
+open(my $magica_fh, '>:encoding(UTF-8)', $magica_file) or die "Could not open file '$magica_file' $!";
+
+my $hor = 16;
+my $first = 1;
+my $last = 157;
+
+my $counter = 0;
+
+my @hor_files;
+print $magica_fh 'PATH="C:\Program Files\ImageMagick-7.0.8-Q16"';
+print $magica_fh "\n\n";
+
+while($counter < $last) {
+	print $magica_fh "magick ";
+	my $hor_size = 0;
+	for(my $i = 0; $i < $hor && $counter < $last; $i++) {
+		printf $magica_fh "%05d.png ", ++$counter;
+		$hor_size += 112;
+	}
+	my $hor_filename = sprintf "HORIZONTAL_%d.png", $counter;
+	printf $magica_fh "+append %s\n\n", $hor_filename;
+	push @hor_files, $hor_filename;
+	printf $magica_fh "magick %s -resize %dx%d %s \n\n", $hor_filename, $hor_size, $hor_size, $hor_filename;
+	# print $magica_fh "magick $hor_filename -resize 1792x1792 $hor_filename \n\n";
+}
+
+print $magica_fh "magick ";
+foreach(@hor_files) {
+	print $magica_fh "$_ ";
+}
+print $magica_fh "-append FINAL.png\n\n";
+
+print $magica_fh "del ";
+print $magica_fh join " ", @hor_files;
+print $magica_fh "\n\n";
+
+close $magica_fh;
+# ============ MAGICA ============ #
+
 exec "start $dir";
 
