@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="130mm"
-   height="80mm"
-   viewBox="0 0 129.99999 80.000003"
+   width="140mm"
+   height="90mm"
+   viewBox="0 0 139.99999 90.000003"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="cracha.svg"
    inkscape:export-filename="C:\Users\moraesgp\Desktop\cracha.png"
    inkscape:export-xdpi="655.47998"
@@ -806,7 +806,7 @@
        id="path-effect5652-9"
        effect="spiro" />
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Feather"
        id="filter1018">
       <feGaussianBlur
@@ -838,17 +838,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.7577724"
-     inkscape:cx="245.66929"
-     inkscape:cy="151.1811"
+     inkscape:zoom="2.4459259"
+     inkscape:cx="194.24591"
+     inkscape:cy="170.07874"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="mm"
      inkscape:window-width="1920"
-     inkscape:window-height="1002"
-     inkscape:window-x="-6"
-     inkscape:window-y="-6"
+     inkscape:window-height="1033"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
      inkscape:window-maximized="1"
      inkscape:snap-global="false"
      showguides="true"
@@ -869,19 +869,19 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="background"
-     transform="translate(0,-978.33339)"
+     transform="translate(0,-968.33339)"
      sodipodi:insensitive="true" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="traco"
      style="display:inline"
-     transform="translate(0,-978.33339)" />
+     transform="translate(0,-968.33339)" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-217.00003)"
+     transform="translate(0,-207.00003)"
      style="display:inline">
     <g
        inkscape:label="Layer 1"
@@ -998,15 +998,15 @@
          y="266.44736"
          style="stroke-width:0.26458332" /></text>
     <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.76672447;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1144"
-       width="129.78973"
-       height="79.789726"
-       x="0.10513594"
-       y="217.10516" />
+       width="139.23326"
+       height="89.233276"
+       x="0.38336223"
+       y="207.38339" />
     <g
        id="g1030"
-       transform="translate(-4.2333335)">
+       transform="matrix(1.1404283,0,0,1.1404283,-9.3804032,-41.761806)">
       <g
          transform="matrix(0.85864051,0,0,0.85864051,20.271308,41.709194)"
          id="g1029">
@@ -1271,10 +1271,10 @@
       </g>
     </g>
     <g
-       id="g1145"
-       transform="translate(0,-0.12538555)">
+       id="g1001"
+       transform="translate(0,0.72170839)">
       <flowRoot
-         transform="matrix(0.26458333,0,0,0.26458333,-18.074672,218.46322)"
+         transform="matrix(0.28779825,0,0,0.28779825,-14.158747,209.18598)"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93 Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
          id="flowRoot1136"
          xml:space="preserve"><flowRegion
@@ -1287,16 +1287,16 @@
              width="301.47464"
              id="rect1140" /></flowRegion><flowPara
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.66666603px;font-family:'Lucida Sans';-inkscape-font-specification:'Lucida Sans Bold';text-align:center;text-anchor:middle"
-           id="flowPara1142">S_AAA P_AAA S_BBB P_BBB</flowPara></flowRoot>      <flowRoot
-         transform="matrix(0.64075787,0,0,0.64075787,-66.031641,207.56275)"
+           id="flowPara1142">S_AAA P_AAA</flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.76339596,0,0,0.76339596,-33.395147,193.31811)"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;line-height:1.25;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93 Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
          id="flowRoot1014"
          xml:space="preserve"><flowRegion
            id="flowRegion1016"><rect
              y="57.695759"
              x="27.858061"
-             height="51.274982"
-             width="280.5993"
+             height="29.092197"
+             width="165.19267"
              id="rect1018" /></flowRegion><flowPara
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.02253342px;font-family:'Lucida Sans';-inkscape-font-specification:'Lucida Sans Bold';text-align:center;text-anchor:middle"
            id="flowPara1020">NAME_CCC</flowPara><flowPara
