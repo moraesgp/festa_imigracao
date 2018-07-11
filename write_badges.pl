@@ -86,7 +86,8 @@ print "\n";
 my $magica_file = "$dir\\magica.bat";
 open(my $magica_fh, '>:encoding(UTF-8)', $magica_file) or die "Could not open file '$magica_file' $!";
 
-my $ver = 3;
+my $ver = 2;
+my $hor = 2;
 my $first = 1;
 my $last = $counter;
 my $ver_counter = 0;
@@ -96,6 +97,7 @@ $counter = 0;
 print $magica_fh 'PATH="C:\Program Files\ImageMagick-7.0.8-Q16"';
 print $magica_fh "\n\n";
 
+my @ver_filenames;
 while($counter < $last) {
 	my @files;
 	for(my $i = 0; $i < $ver && $counter < $last; $i++) {
@@ -103,6 +105,7 @@ while($counter < $last) {
 		push @files, $file; 
 	}
 	my $ver_filename = sprintf "V3_%d.png", ++$ver_counter;
+	push @ver_filenames, $ver_filename;
 	print $magica_fh "magick ";
 	print $magica_fh join " ", @files;
 	print $magica_fh " -append $ver_filename\n";
@@ -111,6 +114,22 @@ while($counter < $last) {
 }
 
 print $magica_fh "\n\n";
+
+my $hor_counter = 0;
+while(@ver_filenames) {
+	my @temp;
+	for(my $i = 0; $i < $hor && @ver_filenames; $i++) {
+		push @temp, (shift @ver_filenames);
+	}
+	my $filename = sprintf "GRUPO_%05d.png", ++$hor_counter;
+	print $magica_fh "magick ";
+	print $magica_fh join " ", @temp;
+	print $magica_fh " +append $filename\n";
+	print $magica_fh "del ", join " ", @temp;
+	print $magica_fh "\n\n";
+
+	
+}
 
 close $magica_fh;
 # ============ MAGICA ============ #
