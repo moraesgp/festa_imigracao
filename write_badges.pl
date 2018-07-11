@@ -109,7 +109,7 @@ while($counter < $last) {
 	print $magica_fh "magick ";
 	print $magica_fh join " ", @files;
 	print $magica_fh " -append $ver_filename\n";
-	print $magica_fh "del ", join " ", @files;
+	# print $magica_fh "del ", join " ", @files;
 	print $magica_fh "\n\n";
 }
 
